@@ -1,3 +1,6 @@
+# Queue를 하나만 써도 되고(zip() 이용 + 리스트)
+# math.ceil을 안써도 되는 방법이 있다(음수 나눗셈)
+# 조건 분기를 더 적게 쓸 수도 있다.
 import queue
 import math
 
