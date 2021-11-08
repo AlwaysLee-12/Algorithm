@@ -5,8 +5,6 @@ def solution(numbers):
 	numbers= list(numbers)
 	permu_list= []
 
-	numbers.sort()
-
 	for i in range(1,len(numbers)+1):
 		permu_list.extend(map(int,list(map(''.join, itertools.permutations(numbers,i)))))
 
