@@ -1,0 +1,34 @@
+from typing import List
+
+def solution(lottos:List[int], win_nums:List[int])->List[int]:
+    answer = []
+    
+    matching_count= 0
+    zero_count= 0
+    
+    # counting matched lotto num, counting zero
+    for lotto_num in lottos:
+      if lotto_num in win_nums:
+        matching_count+=1
+      elif lotto_num==0:
+        zero_count+=1
+      
+    answer.append(matching_count+zero_count)
+    answer.append(matching_count)
+    
+    # put rank by each case and find max rank, min rank
+    for i in range(len(answer)):
+      if answer[i]==6:
+        answer[i]= 1
+      elif answer[i]==5:
+        answer[i]=2
+      elif answer[i]==4:
+        answer[i]=3
+      elif answer[i]==3:
+        answer[i]=4
+      elif answer[i]==2:
+        answer[i]=5
+      else:
+        answer[i]=6
+    
+    return answer
