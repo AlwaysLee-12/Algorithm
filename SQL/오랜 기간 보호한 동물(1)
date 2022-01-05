@@ -1,0 +1,21 @@
+# 입양 못간 동물들 중 
+# 보호기간이(ai.datetime) 제일 오래된 순 상위 3개
+# limit n은 mysql에서 사용하는 상위 n개 출력
+# rownum <= n은 oracle
+# top n은 sql server
+
+# left join을 이용한 풀이
+SELECT ai.NAME, ai.DATETIME
+from ANIMAL_INS as ai 
+left join ANIMAL_OUTS as ao
+on ai.ANIMAL_ID = ao.ANIMAL_ID
+where ao.ANIMAL_ID is null
+order by ai.DATETIME asc
+limit 3
+
+# subquery를 이용한 풀이
+select ai.NAME, ai.DATETIME
+from ANIMAL_INS as ai
+where ai.ANIMAL_ID not in (select distinct(ANIMAL_ID) from ANIMAL_OUTS)
+order by ai.DATETIME asc
+limit 3
