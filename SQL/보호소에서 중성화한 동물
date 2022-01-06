@@ -1,0 +1,9 @@
+# 보호소에서 있을 당시에는 중성화가 되지 않았지만
+# 보호소로부터 나갈 때 중성화된 동물을 
+# id 순으로 출력
+
+SELECT ai.ANIMAL_ID, ai.ANIMAL_TYPE, ai.NAME
+from ANIMAL_INS as ai inner join ANIMAL_OUTS as ao
+on ai.ANIMAL_ID=ao.ANIMAL_ID
+where ai.SEX_UPON_INTAKE like 'Intact%' and (ao.SEX_UPON_OUTCOME like 'Spayed%' or ao.SEX_UPON_OUTCOME like 'Neutered%')
+order by ai.ANIMAL_ID asc
