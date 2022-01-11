@@ -1,8 +1,9 @@
 # 이름에 el이 들어가고(대소문자는 구분하지 않음)
 # 동물의 종류가 개인 것들을
 # 이름의 오름차순으로 정렬해 아이디와 이름을 출력
+# mysql에서 like는 대소문자를 구분하지 않음
 
 SELECT ANIMAL_ID, NAME
 from ANIMAL_INS 
-where lower(name) like "%el%" and ANIMAL_TYPE = "Dog"
+where name like "%el%" and ANIMAL_TYPE = "Dog"
 order by name asc
