@@ -1,0 +1,15 @@
+# 중성화가 되어있는 동물은 O, 안되어있으면 X
+# 동물들의 아이디와 이름 중성화 여부 출력
+# 아이디 오름차순으로
+# case 사용
+# case when 조건 then 값 else 값2 end
+
+SELECT ANIMAL_ID, NAME, 
+case 
+when SEX_UPON_INTAKE like '%Neutered%' or SEX_UPON_INTAKE like '%Spayed%'
+then 'O'
+else 'X'
+end
+as '중성화'
+from ANIMAL_INS
+order by ANIMAL_ID asc
