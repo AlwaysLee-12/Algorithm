@@ -1,0 +1,10 @@
+# 입양 간 동물 중 보호 기간이 가장 길었던 동물 두 마리
+# 동물의 아이디와 이름 조회
+# 입양 간 날짜에서 보호소에 들어온 날짜의 차이가 큰 동물 두 마리
+
+select ai.ANIMAL_ID, ai.NAME
+from ANIMAL_INS as ai 
+join ANIMAL_OUTS as ao 
+on ai.ANIMAL_ID = ao.ANIMAL_ID
+order by ao.DATETIME - ai.DATETIME desc 
+limit 2
