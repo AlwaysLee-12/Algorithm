@@ -1,0 +1,8 @@
+# 모든 동물들의 아이디, 이름, 보호소로 들어온 날 출력
+# 들어온 날짜는 yyyy-mm-dd 형식으로 출력
+# date_format(날짜 데이터, 형식) 함수 사용
+# %Y = 2022, %M = july, %D = 14th, %y = 22, %m = 07, %d = 14
+
+SELECT ANIMAL_ID, NAME, date_format(DATETIME,'%Y-%m-%d') as '날짜'
+from ANIMAL_INS
+order by ANIMAL_ID
