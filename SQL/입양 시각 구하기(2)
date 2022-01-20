@@ -1,0 +1,21 @@
+# 0시부터 23시까지, 각 시간대별로 입양이 몇 건이나 발생했는지 조회
+# 결과는 시간순으로 정렬
+# with recursive 테이블 이름 as(
+#   select 숫자 as 컬럼이름
+#   union all
+#   select 컬럼이름에 대한 연산(h+1) from 테이블 이름 where 조건
+#   )
+# 왼쪽 조인하기
+
+with recursive hour_tb as(
+    select 0 as h 
+    union all
+    select h + 1 from hour_tb where h < 23
+)
+
+SELECT h, count(animal_id) as count
+from hour_tb
+left join animal_outs
+on hour_tb.h = hour(animal_outs.datetime)
+group by h
+order by h
