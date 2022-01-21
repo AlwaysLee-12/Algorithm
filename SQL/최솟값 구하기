@@ -1,0 +1,5 @@
+# 가장 먼저 들어온 동물의 입양 날짜
+# 가장 작은 시간 = 가장 오래된 시간
+
+SELECT min(datetime) as '시간'
+from animal_ins
