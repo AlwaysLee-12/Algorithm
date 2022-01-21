@@ -1,0 +1,23 @@
+# 이름이 없는 동물은
+# no name으로 표시
+# 아이디 순 조회
+
+# case 사용
+SELECT animal_type, 
+case 
+when name is null then 'No name'
+else name
+end as name, 
+sex_upon_intake
+from animal_ins
+order by animal_id
+
+# ifnull 사용
+SELECT animal_type, ifnull(name, "No name") as name, sex_upon_intake
+from animal_ins
+order by animal_id
+
+# if 사용
+SELECT animal_type, if(name is null, 'No name', name) as name, sex_upon_intake
+from animal_ins
+order by animal_id
