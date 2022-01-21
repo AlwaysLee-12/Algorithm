@@ -1,0 +1,8 @@
+# 보호소에 있는 전체 동물의 이름 개수
+# 이름이 null인 경우 빼고
+# 중복되는 이름은 하나로
+# 중복 안되게 = count(distinct 컬럼 이름)
+
+SELECT count(distinct name) as count
+from animal_ins
+where name is not null
