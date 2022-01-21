@@ -1,0 +1,8 @@
+# 동물의 이름이 null인 
+# 동물 아이디 조회
+# 아이디 오름차순
+
+SELECT animal_id
+from animal_ins
+where name is null
+order by animal_id
