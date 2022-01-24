@@ -1,0 +1,11 @@
+# 우유와 요거트가 담긴 장바구니의 ID 조회
+# ID 순으로 조회
+# where 절로 우유와 요거트가 담긴 장바구니만 남기게 거른 후
+# 장바구니 ID를 그룹별로 묶어서 count를 이용해 우유와 요거트가 둘 다 담겨있는지 확인
+
+SELECT cart_id
+from cart_products
+where name = 'Milk' or name = 'Yogurt'
+group by cart_id
+having count(distinct name) = 2
+order by cart_id
