@@ -1,4 +1,5 @@
 //나의 풀이
+//각 단계마다 코드 작성
 import java.util.*;
 
 class Solution {
@@ -22,11 +23,10 @@ class Solution {
 }
 
 //코드가 간결한 풀이(람다식 사용)
+//가독성 + 함수의 조립(유연성)
 class Solution{
   public int[] solution(int[] arr, int divisor){
-    int[] answer = Arrays.stream(arr).filter(num -> num % divisor == 0).toArray();
-    
-    Arrays.sort(answer);
+    int[] answer = Arrays.stream(arr).filter(num -> num % divisor == 0).sorted().toArray();
     
     if(answer.length == 0){
       answer = new int[] {-1}; 
