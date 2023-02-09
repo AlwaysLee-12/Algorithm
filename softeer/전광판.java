@@ -174,7 +174,7 @@ public class Main
             insertToQueue(aQ, eachNumSwitchStateArr, aValList);
             insertToQueue(bQ, eachNumSwitchStateArr, bValList);
 
-            //자릿수 
+            //자릿수 맞추기
             int aQSize = aQ.size();
             int bQSize = bQ.size();
 
